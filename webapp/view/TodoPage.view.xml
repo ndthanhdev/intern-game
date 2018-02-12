@@ -1,0 +1,21 @@
+<mvc:View controllerName="app.controller.TodoPage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <!-- <Page title="{i18n>todoPageTitle}">
+        <Text text="this is todopage"/>
+    </Page> -->
+    <List
+        headerText="{i18n>todoPageTitle}"
+        mode="Delete"
+        items="{
+            path: 'todos>/'
+        }"
+        delete="handleDelete">
+        <CustomListItem
+            title="{todos>content}">
+            <HBox alignItems="Center">
+                <CheckBox selected="{todos>isComplete}"/>
+                <Label text="{todos>content}" textAlign="Center"/>
+            </HBox>
+        </CustomListItem>
+    </List>
+</mvc:View>
