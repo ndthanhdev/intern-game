@@ -18,6 +18,16 @@ sap.ui.define([
 				items = todos.getProperty("/");
 			items.splice(index, 1);
 			todos.setData(items);
+		},
+		handlePost: (oEvent) => {
+			var sValue = oEvent.getParameter("value"),
+				items = todos.getProperty("/");
+			items.unshift({
+				isComplete: false,
+				content: sValue,
+				isDelete: false
+			});
+			todos.setData(items);
 		}
 	});
 });
