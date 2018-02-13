@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"app/model/todos"
-], function (Controller, todos) {
+	"app/model/todos",
+	"app/redux/store"
+], function (Controller, todos, oStore) {
 	"use strict";
 
 	return Controller.extend("app.controller.TodoPage", {
@@ -24,10 +25,17 @@ sap.ui.define([
 				items = todos.getProperty("/");
 			items.unshift({
 				isComplete: false,
-				content: sValue,
+				text: sValue,
 				isDelete: false
 			});
 			todos.setData(items);
+		},
+		handleReload: (oEvent) => {
+			oStore.dispatch({
+				type: 'LOAD_TODO',
+				meta: {},
+				payload: {}
+			});
 		}
 	});
 });

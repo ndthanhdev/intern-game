@@ -1,8 +1,10 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"app/model/models"
-], function(UIComponent, Device, models) {
+	"app/model/models",
+	"libs/openui5-redux-model/ReduxModel",
+	"app/redux/store"
+], function (UIComponent, Device, models, ReduxModel, oStore) {
 	"use strict";
 
 	return UIComponent.extend("app.Component", {
@@ -16,7 +18,7 @@ sap.ui.define([
 		 * @public
 		 * @override
 		 */
-		init: function() {
+		init: function () {
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
@@ -25,6 +27,10 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+
+			// set redux model
+			const model = new ReduxModel(oStore);
+			this.setModel(model, "redux");
 		}
 	});
 });

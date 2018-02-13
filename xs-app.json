@@ -11,7 +11,8 @@
       "localDir": "webapp"
     },
     {
-      "source": "^/(.*)$",
+      "source": "^/resources/(.*)$",
+      "target": "$1",
       "localDir": "resources"
     }
   ]

@@ -6,187 +6,187 @@ sap.ui.define([
     return new JSONModel([
         {
             isComplete: false,
-            content: "Make a todo app using SAP UI5",
+            text: "Make a todo app using SAP UI5",
             isDeleted: false
         },
         {
             isComplete: true,
-            content: "Turn on laptop",
+            text: "Turn on laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         },
         {
             isComplete: false,
-            content: "Turn off laptop",
+            text: "Turn off laptop",
             isDeleted: false
         }
     ]);

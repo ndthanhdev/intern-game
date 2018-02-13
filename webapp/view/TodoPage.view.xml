@@ -20,11 +20,10 @@
                 delete="handleDelete"
                 class="sapUiTinyMarginTopBottom">
                 <CustomListItem
-                    title="{todos>content}"
                     class="sapUiTinyMarginBeginEnd">
                     <HBox alignItems="Center">
                         <CheckBox selected="{todos>isComplete}"/>
-                        <Label text="{todos>content}" textAlign="Center"/>
+                        <Label text="{todos>text}" textAlign="Center"/>
                     </HBox>
                 </CustomListItem>
             </List>
@@ -33,7 +32,7 @@
             <Toolbar class="sapUiResponsiveContentPadding">
                 <Button text="Clear completed todo" type="Reject" icon="sap-icon://sys-cancel-2" />
                 <ToolbarSpacer/>                
-                <Button text="Reload" type="Emphasized" icon="sap-icon://refresh"/>
+                <Button text="Reload" press="handleReload" type="Emphasized" icon="sap-icon://refresh"/>
             </Toolbar>
         </footer>
     </Page>
