@@ -30,7 +30,14 @@ sap.ui.define([
 
 			// set redux model
 			const model = new ReduxModel(oStore);
-			this.setModel(model, "redux");
+			this.setModel(model);
+
+			// first load
+			oStore.dispatch({
+				type: 'LOAD_TODO',
+				meta: {},
+				payload: {}
+			});
 		}
 	});
 });

@@ -1,34 +1,43 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"app/model/todos",
-	"app/redux/store"
-], function (Controller, todos, oStore) {
+	"app/redux/store",
+	"libs/faker"
+], function (Controller, oStore) {
 	"use strict";
 
 	return Controller.extend("app.controller.TodoPage", {
 		onInit: function () {
-			this.getView().setModel(todos, "todos")
 		},
-		handleDelete: (oEvent) => {
-			console.log('delete');
+		handleDelete: function (oEvent) {
+			let context = oEvent.getParameter('listItem').getBindingContext();
 
-			var oList = oEvent.getSource(),
-				oItem = oEvent.getParameter("listItem"),
-				sPath = oItem.getBindingContextPath(),
-				index = parseInt(sPath.substring(1)),
-				items = todos.getProperty("/");
-			items.splice(index, 1);
-			todos.setData(items);
+			oStore.dispatch({
+				type: 'DELETE_TODO',
+				meta: {},
+				payload: context.oModel.getProperty(context.sPath).id
+			});
+		},
+		handleToggle: function (oEvent) {
+			let context = oEvent.getSource().getBindingContext();
+
+			oStore.dispatch({
+				type: 'TOGGLE_TODO',
+				meta: {},
+				payload: context.oModel.getProperty(context.sPath).id
+			});
 		},
 		handlePost: (oEvent) => {
-			var sValue = oEvent.getParameter("value"),
-				items = todos.getProperty("/");
-			items.unshift({
-				isComplete: false,
-				text: sValue,
-				isDelete: false
+			var sValue = oEvent.getParameter("value");
+			oStore.dispatch({
+				type: 'ADD_TODO',
+				meta: {},
+				payload: {
+					id: faker.random.uuid(),
+					text: sValue,
+					isComplete: false,
+					isDelete: false
+				}
 			});
-			todos.setData(items);
 		},
 		handleReload: (oEvent) => {
 			oStore.dispatch({
