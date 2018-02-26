@@ -8,6 +8,13 @@ sap.ui.define([
 	return Controller.extend("app.controller.TodoPage", {
 		onInit: function () {
 		},
+		handleClearDeletedTodo: function (oEvent) {
+			oStore.dispatch({
+				type: 'CLEAR_COMPLETED_TODO',
+				meta: {},
+				payload: undefined
+			});
+		},
 		handleDelete: function (oEvent) {
 			let context = oEvent.getParameter('listItem').getBindingContext();
 

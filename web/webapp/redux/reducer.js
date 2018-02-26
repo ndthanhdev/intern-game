@@ -43,7 +43,11 @@ sap.ui.define([], () => {
         return { ...state, todos: todos };
       case 'TOGGLE_TODO':
         todos = [...state.todos];
-        todos = todos.map(todo => todo.id !== action.payload ? todo : { ...todo, isComplete: !todo.isCompleted });
+        todos = todos.map(todo => todo.id !== action.payload ? todo : { ...todo, isComplete: !todo.isComplete });
+        return { ...state, todos: todos };
+      case 'CLEAR_COMPLETED_TODO':
+        todos = [...state.todos];
+        todos = todos.filter(todo => !todo.isComplete);
         return { ...state, todos: todos };
       default:
         return state
