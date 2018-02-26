@@ -4,7 +4,7 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content/>
-			</Page>
+			</Page>			
 		</pages>
 	</App>
 </mvc:View>

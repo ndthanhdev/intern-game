@@ -1,0 +1,5 @@
+{
+    "ui5ts.lang.xml.LogLevel": 4,
+    "ui5ts.manifestlocation": "webapp\\manifest.json",
+    "ui5ts.lang.xml.linter.controller": "Hint"
+}
