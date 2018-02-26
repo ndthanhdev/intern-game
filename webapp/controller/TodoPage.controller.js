@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"app/redux/store",
-	"libs/faker"
+	"libs/faker/index"
 ], function (Controller, oStore) {
 	"use strict";
 

@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"app/model/models",
-	"libs/openui5-redux-model/ReduxModel",
+	"libs/openui5-redux-model/dist/redux/ReduxModel",
 	"app/redux/store"
 ], function (UIComponent, Device, models, ReduxModel, oStore) {
 	"use strict";

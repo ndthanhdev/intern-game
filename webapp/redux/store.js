@@ -1,7 +1,7 @@
 sap.ui.define([
     'app/redux/reducer',
-    'libs/redux',
-    'libs/redux-logger'
+    'libs/redux/index',
+    'libs/redux-logger/index'
 ], function (fnReducers) {
     var oStore = Redux.createStore(
         fnReducers,

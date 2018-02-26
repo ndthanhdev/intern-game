@@ -14,6 +14,11 @@
       "source": "^/resources/(.*)$",
       "target": "$1",
       "localDir": "resources"
+    },
+    {
+      "source": "^/bower_components/(.*)$",
+      "target": "$1",
+      "localDir": "bower_components"
     }
   ]
 }
