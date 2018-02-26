@@ -47,11 +47,15 @@ sap.ui.define([
 			});
 		},
 		handleReload: (oEvent) => {
-			oStore.dispatch({
-				type: 'LOAD_TODO',
-				meta: {},
-				payload: {}
-			});
+			$.ajax({ url: "/resources/todos.json" })
+				.done(function (r) {
+					// first load
+					oStore.dispatch({
+						type: 'LOAD_TODO',
+						meta: {},
+						payload: r
+					});
+				});
 		}
 	});
 });
