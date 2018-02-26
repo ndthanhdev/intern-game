@@ -5,9 +5,6 @@ sap.ui.define([
 ], function (fnReducers) {
     var oStore = Redux.createStore(
         fnReducers,
-        Redux.applyMiddleware(
-            reduxLogger.createLogger()
-        ),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
 

@@ -1,0 +1,7 @@
+---
+applications:
+-   name: shell-web
+    path: web
+
+-   name: shell-js
+    path: js
