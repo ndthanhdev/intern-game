@@ -3,9 +3,10 @@ sap.ui.define([
     'libs/redux/index',
     'libs/redux-logger/index'
 ], function (fnReducers) {
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     var oStore = Redux.createStore(
         fnReducers,
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        composeEnhancers(Redux.applyMiddleware(reduxLogger.createLogger()))
     );
 
     return oStore;
