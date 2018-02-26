@@ -34,7 +34,7 @@ sap.ui.define([], () => {
     let todos;
     switch (action.type) {
       case 'LOAD_TODO':
-        return { ...state, todos: initState.todos };
+        return { ...state, todos: action.payload || initState.todos };
       case 'ADD_TODO':
         return { ...state, todos: [action.payload, ...state.todos] };
       case 'DELETE_TODO':

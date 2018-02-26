@@ -32,12 +32,15 @@ sap.ui.define([
 			const model = new ReduxModel(oStore);
 			this.setModel(model);
 
-			// first load
-			oStore.dispatch({
-				type: 'LOAD_TODO',
-				meta: {},
-				payload: {}
-			});
+			$.ajax({ url: "/resources/todos.json" })
+				.done(function (r) {
+					// first load
+					oStore.dispatch({
+						type: 'LOAD_TODO',
+						meta: {},
+						payload: r
+					});
+				});
 		}
 	});
 });

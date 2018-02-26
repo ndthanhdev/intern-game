@@ -6,6 +6,10 @@ sap.ui.define([
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     var oStore = Redux.createStore(
         fnReducers,
+        {
+            isBusy: false,
+            todos: []
+        },
         composeEnhancers(Redux.applyMiddleware())
     );
 
