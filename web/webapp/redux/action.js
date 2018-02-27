@@ -34,7 +34,8 @@ sap.ui.define([
     const AddTodo = (text) => async (dispatch, getState) => {
         try {
             await dispatch({
-                type: actionType.ADD_TODO
+                type: actionType.ADD_TODO,
+                payload: text
             });
             const todo = await api.postTodo(text);
             const action = AddTodoSuccess(todo);
@@ -62,7 +63,8 @@ sap.ui.define([
     const DeleteTodo = (id) => async (dispatch, getState) => {
         try {
             await dispatch({
-                type: actionType.DELETE_TODO
+                type: actionType.DELETE_TODO,
+                payload: id
             });
             const deletedId = await api.deleteTodo(id);
             const action = DeleteTodoSuccess(deletedId);
@@ -86,6 +88,35 @@ sap.ui.define([
         });
     };
 
+    // toggle todo
+    const ToggleTodo = (todo) => async (dispatch, getState) => {
+        try {
+            await dispatch({
+                type: actionType.TOGGLE_TODO,
+                payload: todo
+            });
+            const preparedTodo = { ...todo, isCompleted: !todo.isCompleted };
+            const newTodo = await api.putTodo(preparedTodo.id, preparedTodo);
+            const action = ToggleTodoSuccess(newTodo);
+            await dispatch(action);
+        } catch (error) {
+            await dispatch(ToggleTodoFail(error));
+        }
+    };
+
+    const ToggleTodoSuccess = (todo) => {
+        return {
+            type: actionType.TOGGLE_TODO_SUCCESS,
+            payload: todo
+        };
+    };
+
+    const ToggleTodoFail = (error) => async (dispatch, getState) => {
+        await dispatch({
+            type: actionType.TOGGLE_TODO_FAIL,
+            payload: error
+        });
+    };
 
     return {
         LoadTodos,
@@ -98,6 +129,10 @@ sap.ui.define([
 
         DeleteTodo,
         DeleteTodoSuccess,
-        DeleteTodoFail
+        DeleteTodoFail,
+
+        ToggleTodo,
+        ToggleTodoSuccess,
+        ToggleTodoFail
     };
 });

@@ -15,7 +15,7 @@ sap.ui.define([
         return { ...state, todos: todos };
       case actionType.TOGGLE_TODO_SUCCESS:
         todos = [...state.todos];
-        todos = todos.map(todo => todo.id !== action.payload ? todo : { ...todo, isComplete: !todo.isComplete });
+        todos = todos.map(todo => todo.id !== action.payload.id ? todo : action.payload);
         return { ...state, todos: todos };
       case actionType.CLEAR_COMPLETED_TODO_SUCCESS:
         todos = [...state.todos];

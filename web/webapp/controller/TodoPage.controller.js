@@ -28,12 +28,13 @@ sap.ui.define([
 		},
 		handleToggle: function (oEvent) {
 			let context = oEvent.getSource().getBindingContext();
-
-			oStore.dispatch({
-				type: 'TOGGLE_TODO',
-				meta: {},
-				payload: context.oModel.getProperty(context.sPath).id
-			});
+			const todo = context.oModel.getProperty(context.sPath);
+			oStore.dispatch(action.ToggleTodo(todo));
+			// oStore.dispatch({
+			// 	type: 'TOGGLE_TODO',
+			// 	meta: {},
+			// 	payload: context.oModel.getProperty(context.sPath)
+			// });
 		},
 		handlePost: (oEvent) => {
 			var sValue = oEvent.getParameter("value");

@@ -13,7 +13,7 @@ import app from "./app";
 const server = app.listen(process.env.PORT || 3000, () => {
     console.log(
         "  App is running at http://localhost:%d in %s mode",
-        process.env.PORT,
+        process.env.PORT || 3000,
         process.env.MODE
     );
     console.log("  Press CTRL-C to stop\n");

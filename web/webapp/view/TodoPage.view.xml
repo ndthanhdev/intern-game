@@ -23,7 +23,7 @@
                 <CustomListItem
                 class="sapUiTinyMarginBeginEnd">
                     <HBox alignItems="Center">
-                        <CheckBox selected="{isComplete}" select="handleToggle"/>
+                        <CheckBox selected="{isCompleted}" select="handleToggle"/>
                         <Label text="{text}" textAlign="Center"/>
                     </HBox>
                 </CustomListItem>

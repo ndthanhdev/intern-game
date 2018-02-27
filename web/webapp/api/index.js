@@ -16,7 +16,7 @@ sap.ui.define([], function () {
             return await $.ajax({
                 url: `/rest/todo/${id}`,
                 method: "PUT",
-                data: todo
+                data: { todo }
             });
         },
         deleteTodo: async function (id) {

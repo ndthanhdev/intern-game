@@ -50,16 +50,15 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     if (req.params.id) {
-        res.json(todos);
         todos = todos.map(todo => todo.id !== req.params.id ? todo : { ...todo, ...req.body.todo, id: req.params.id });
-        res.sendStatus(200);
+        res.json(req.body.todo);
     } else {
         res.sendStatus(500);
     };
 });
 
 router.delete('/:id', (req, res) => {
-    if (req.params.id) {        
+    if (req.params.id) {
         todos = todos.filter(todo => todo.id !== req.params.id);
         res.json(req.params.id);
     } else {
