@@ -59,10 +59,9 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    if (req.params.id) {
-        res.json(todos);
+    if (req.params.id) {        
         todos = todos.filter(todo => todo.id !== req.params.id);
-        res.sendStatus(200);
+        res.json(req.params.id);
     } else {
         res.sendStatus(500);
     };

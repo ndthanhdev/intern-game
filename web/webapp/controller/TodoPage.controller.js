@@ -18,12 +18,13 @@ sap.ui.define([
 		},
 		handleDelete: function (oEvent) {
 			let context = oEvent.getParameter('listItem').getBindingContext();
-
-			oStore.dispatch({
-				type: 'DELETE_TODO',
-				meta: {},
-				payload: context.oModel.getProperty(context.sPath).id
-			});
+			const id = context.oModel.getProperty(context.sPath).id;
+			// oStore.dispatch({
+			// 	type: 'DELETE_TODO',
+			// 	meta: {},
+			// 	payload: id
+			// });
+			oStore.dispatch(action.DeleteTodo(id));
 		},
 		handleToggle: function (oEvent) {
 			let context = oEvent.getSource().getBindingContext();

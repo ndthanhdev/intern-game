@@ -58,6 +58,35 @@ sap.ui.define([
         });
     };
 
+    // delete todo
+    const DeleteTodo = (id) => async (dispatch, getState) => {
+        try {
+            await dispatch({
+                type: actionType.DELETE_TODO
+            });
+            const deletedId = await api.deleteTodo(id);
+            const action = DeleteTodoSuccess(deletedId);
+            await dispatch(action);
+        } catch (error) {
+            await dispatch(AddTodoFail(error));
+        }
+    };
+
+    const DeleteTodoSuccess = (id) => {
+        return {
+            type: actionType.DELETE_TODO_SUCCESS,
+            payload: id
+        };
+    };
+
+    const DeleteTodoFail = (error) => async (dispatch, getState) => {
+        await dispatch({
+            type: actionType.DELETE_TODO_FAIL,
+            payload: error
+        });
+    };
+
+
     return {
         LoadTodos,
         LoadTodosSuccess,
@@ -65,6 +94,10 @@ sap.ui.define([
 
         AddTodo,
         AddTodoSuccess,
-        AddTodoFail
+        AddTodoFail,
+
+        DeleteTodo,
+        DeleteTodoSuccess,
+        DeleteTodoFail
     };
 });
