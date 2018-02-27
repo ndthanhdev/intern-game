@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/Device",
 	"app/model/models",
 	"libs/openui5-redux-model/dist/redux/ReduxModel",
-	"app/redux/store"
-], function (UIComponent, Device, models, ReduxModel, oStore) {
+	"app/redux/store",
+	"app/redux/action"
+], function (UIComponent, Device, models, ReduxModel, oStore, action) {
 	"use strict";
 
 	return UIComponent.extend("app.Component", {
@@ -32,15 +33,7 @@ sap.ui.define([
 			const model = new ReduxModel(oStore);
 			this.setModel(model);
 
-			$.ajax({ url: "/resources/todos.json" })
-				.done(function (r) {
-					// first load
-					oStore.dispatch({
-						type: 'LOAD_TODO',
-						meta: {},
-						payload: r
-					});
-				});
+			oStore.dispatch(action.LoadTodos());
 		}
 	});
 });

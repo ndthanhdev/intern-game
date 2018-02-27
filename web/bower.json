@@ -18,6 +18,8 @@
     "redux": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js",
     "faker": "https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js",
     "openui5-redux-model": "^0.2.0",
-    "redux-logger": "https://cdn.jsdelivr.net/npm/redux-logger@3.0.6/dist/redux-logger.min.js"
+    "redux-logger": "https://cdn.jsdelivr.net/npm/redux-logger@3.0.6/dist/redux-logger.min.js",
+    "redux-saga": "https://cdnjs.cloudflare.com/ajax/libs/redux-saga/0.16.0/redux-saga.js",
+    "redux-thunk": "https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.js"
   }
 }
