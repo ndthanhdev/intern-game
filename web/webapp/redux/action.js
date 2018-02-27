@@ -2,6 +2,7 @@ sap.ui.define([
     'app/api/index',
     'app/redux/actionType'
 ], function (api, actionType) {
+    // load todos
     const LoadTodos = () => async (dispatch, getState) => {
         try {
             await dispatch({

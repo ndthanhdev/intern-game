@@ -7,17 +7,17 @@ sap.ui.define([
     switch (action.type) {
       case actionType.LOAD_TODOS_SUCCESS:
         return { ...state, todos: action.payload || initState.todos };
-      case 'ADD_TODO':
+      case actionType.ADD_TODO_SUCCESS:
         return { ...state, todos: [action.payload, ...state.todos] };
-      case 'DELETE_TODO':
+      case actionType.DELETE_TODO_SUCCESS:
         todos = [...state.todos];
         todos = todos.filter(todo => todo.id !== action.payload);
         return { ...state, todos: todos };
-      case 'TOGGLE_TODO':
+      case actionType.TOGGLE_TODO_SUCCESS:
         todos = [...state.todos];
         todos = todos.map(todo => todo.id !== action.payload ? todo : { ...todo, isComplete: !todo.isComplete });
         return { ...state, todos: todos };
-      case 'CLEAR_COMPLETED_TODO':
+      case actionType.CLEAR_COMPLETED_TODO_SUCCESS:
         todos = [...state.todos];
         todos = todos.filter(todo => !todo.isComplete);
         return { ...state, todos: todos };

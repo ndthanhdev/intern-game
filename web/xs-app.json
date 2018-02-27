@@ -19,6 +19,11 @@
       "source": "^/bower_components/(.*)$",
       "target": "$1",
       "localDir": "bower_components"
+    },
+    {
+      "source": "^/ts/(.*)$",
+      "target": "$1",
+      "localDir": "bower_components"
     }
   ]
 }

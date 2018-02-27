@@ -3,8 +3,8 @@ applications:
 -   name: shell-web
     path: web
 
--   name: shell-js
-    path: js
+-   name: shell-ts
+    path: ts
 
 -   name: shell-db
     path: js
