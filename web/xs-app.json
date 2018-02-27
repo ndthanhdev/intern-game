@@ -21,9 +21,9 @@
       "localDir": "bower_components"
     },
     {
-      "source": "^/ts/(.*)$",
+      "source": "^/rest/(.*)$",
       "target": "$1",
-      "localDir": "bower_components"
+      "destination": "backend"
     }
   ]
 }

@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"app/redux/store",
+	"app/redux/action",
 	"libs/faker/index"
-], function (Controller, oStore) {
+], function (Controller, oStore, action) {
 	"use strict";
 
 	return Controller.extend("app.controller.TodoPage", {
@@ -35,27 +36,29 @@ sap.ui.define([
 		},
 		handlePost: (oEvent) => {
 			var sValue = oEvent.getParameter("value");
-			oStore.dispatch({
-				type: 'ADD_TODO',
-				meta: {},
-				payload: {
-					id: faker.random.uuid(),
-					text: sValue,
-					isComplete: false,
-					isDelete: false
-				}
-			});
+			// oStore.dispatch({
+			// 	type: 'ADD_TODO',
+			// 	meta: {},
+			// 	payload: {
+			// 		id: faker.random.uuid(),
+			// 		text: sValue,
+			// 		isComplete: false,
+			// 		isDelete: false
+			// 	}
+			// });
+			oStore.dispatch(action.AddTodo(sValue));
 		},
 		handleReload: (oEvent) => {
-			$.ajax({ url: "/resources/todos.json" })
-				.done(function (r) {
-					// first load
-					oStore.dispatch({
-						type: 'LOAD_TODO',
-						meta: {},
-						payload: r
-					});
-				});
+			// $.ajax({ url: "/resources/todos.json" })
+			// 	.done(function (r) {
+			// 		// first load
+			// 		oStore.dispatch({
+			// 			type: 'LOAD_TODO',
+			// 			meta: {},
+			// 			payload: r
+			// 		});
+			// 	});
+			oStore.dispatch(action.LoadTodos());
 		}
 	});
 });

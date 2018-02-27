@@ -1,0 +1,2 @@
+SET NODE_TLS_REJECT_UNAUTHORIZED=0
+call env.bat
