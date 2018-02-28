@@ -24,7 +24,8 @@ router.put('/clear-completed-todos', (req, res) => {
     res.json(todos);
 });
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    await (new Promise(resolve => setTimeout(resolve, 3000)));
     res.json(todos);
 });
 
@@ -54,7 +55,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     if (req.params.id) {
-        todos = todos.filter(todo => todo.id !== req.params.id);
+        todos = todos.map(todo => todo.id !== req.params.id ? todo : { ...todo, isDeleted: true });
         res.json(req.params.id);
     } else {
         res.sendStatus(500);

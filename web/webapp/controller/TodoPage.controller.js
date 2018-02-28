@@ -2,11 +2,14 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"app/redux/store",
 	"app/redux/action",
-	"libs/faker/index"
-], function (Controller, oStore, action) {
+	"app/model/formatter"
+], function (Controller, oStore, action, formatter) {
 	"use strict";
 
 	return Controller.extend("app.controller.TodoPage", {
+
+		formatter: formatter,
+
 		onInit: function () {
 		},
 		handleClearComletedTodo: function (oEvent) {

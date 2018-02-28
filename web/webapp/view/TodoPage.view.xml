@@ -15,12 +15,14 @@
             headerText="{i18n>todoYourTodo}"
             items="{ 
                     path: '/todos',
-                    mode: 'OneWay'
+                    mode: 'OneWay',
+                    formatter: '.formatter.deletedFilter'
                 }"
+            busy="{/isBusy}"
+            noDataText="{i18n>noTodosText}"
             class="sapUiTinyMarginTopBottom">
                 <CustomListItem
-                class="sapUiTinyMarginBeginEnd"
-                visible="{= !${isDeleted}}">
+                class="sapUiTinyMarginBeginEnd">
                     <HBox alignItems="Center" justifyContent="SpaceBetween">
                         <HBox alignItems="Center" justifyContent="Start">
                             <CheckBox selected="{isCompleted}" select="handleToggle"/>

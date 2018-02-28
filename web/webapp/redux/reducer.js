@@ -5,9 +5,11 @@ sap.ui.define([
   return (state, action) => {
     let todos;
     switch (action.type) {
+      case actionType.LOAD_TODOS:
+        return { ...state, isBusy: true };
       case actionType.LOAD_TODOS_SUCCESS:
       case actionType.CLEAR_COMPLETED_TODO_SUCCESS:
-        return { ...state, todos: action.payload || initState.todos };
+        return { ...state, todos: action.payload || initState.todos, isBusy: false };
       case actionType.ADD_TODO_SUCCESS:
         return { ...state, todos: [action.payload, ...state.todos] };
       case actionType.DELETE_TODO_SUCCESS:
