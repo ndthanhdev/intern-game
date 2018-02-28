@@ -118,6 +118,34 @@ sap.ui.define([
         });
     };
 
+    // clear completed todos
+    const ClearComletedTodos = () => async (dispatch, getState) => {
+        try {
+            await dispatch({
+                type: actionType.CLEAR_COMPLETED_TODOS
+            });
+            const todos = await api.clearComletedTodos();
+            const action = ClearComletedTodosSuccess(todos);
+            await dispatch(action);
+        } catch (error) {
+            await dispatch(ClearComletedTodosFail(error));
+        }
+    };
+
+    const ClearComletedTodosSuccess = (todos) => {
+        return {
+            type: actionType.CLEAR_COMPLETED_TODOS_SUCCESS,
+            payload: todos
+        };
+    };
+
+    const ClearComletedTodosFail = (error) => async (dispatch, getState) => {
+        await dispatch({
+            type: actionType.CLEAR_COMPLETED_TODOS_FAIL,
+            payload: error
+        });
+    };
+
     return {
         LoadTodos,
         LoadTodosSuccess,
@@ -133,6 +161,10 @@ sap.ui.define([
 
         ToggleTodo,
         ToggleTodoSuccess,
-        ToggleTodoFail
+        ToggleTodoFail,
+
+        ClearComletedTodos,
+        ClearComletedTodosSuccess,
+        ClearComletedTodosFail
     };
 });

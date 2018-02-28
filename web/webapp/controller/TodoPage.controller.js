@@ -9,15 +9,16 @@ sap.ui.define([
 	return Controller.extend("app.controller.TodoPage", {
 		onInit: function () {
 		},
-		handleClearDeletedTodo: function (oEvent) {
-			oStore.dispatch({
-				type: 'CLEAR_COMPLETED_TODO',
-				meta: {},
-				payload: undefined
-			});
+		handleClearComletedTodo: function (oEvent) {
+			// oStore.dispatch({
+			// 	type: 'CLEAR_COMPLETED_TODO',
+			// 	meta: {},
+			// 	payload: undefined
+			// });
+			oStore.dispatch(action.ClearComletedTodos());
 		},
 		handleDelete: function (oEvent) {
-			let context = oEvent.getParameter('listItem').getBindingContext();
+			let context = oEvent.getSource().getBindingContext();
 			const id = context.oModel.getProperty(context.sPath).id;
 			// oStore.dispatch({
 			// 	type: 'DELETE_TODO',

@@ -13,25 +13,30 @@
         <content>
             <List
             headerText="{i18n>todoYourTodo}"
-            mode="Delete"
             items="{ 
                     path: '/todos',
                     mode: 'OneWay'
                 }"
-            delete="handleDelete"
             class="sapUiTinyMarginTopBottom">
                 <CustomListItem
-                class="sapUiTinyMarginBeginEnd">
-                    <HBox alignItems="Center">
-                        <CheckBox selected="{isCompleted}" select="handleToggle"/>
-                        <Label text="{text}" textAlign="Center"/>
+                class="sapUiTinyMarginBeginEnd"
+                visible="{= !${isDeleted}}">
+                    <HBox alignItems="Center" justifyContent="SpaceBetween">
+                        <HBox alignItems="Center" justifyContent="Start">
+                            <CheckBox selected="{isCompleted}" select="handleToggle"/>
+                            <Label text="{text}" textAlign="Center"/>
+                        </HBox>
+                        <HBox alignItems="Center" justifyContent="End" class="sapUiTinyMarginBeginEnd">
+                            <Button icon="sap-icon://delete" press="handleDelete" />
+                        </HBox>
+
                     </HBox>
                 </CustomListItem>
             </List>
         </content>
         <footer>
             <Toolbar class="sapUiResponsiveContentPadding">
-                <Button text="Clear completed todo" press="handleClearDeletedTodo" type="Reject" icon="sap-icon://sys-cancel-2" />
+                <Button text="Clear completed todo" press="handleClearComletedTodo" type="Reject" icon="sap-icon://sys-cancel-2" />
                 <ToolbarSpacer/>
                 <Button text="Reload" press="handleReload" type="Emphasized" icon="sap-icon://refresh"/>
             </Toolbar>
