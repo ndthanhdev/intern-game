@@ -16,7 +16,7 @@
             items="{ 
                     path: '/todos',
                     mode: 'OneWay',
-                    formatter: '.formatter.deletedFilter'
+                    filters:[{path:'isDeleted', operator:'EQ', value1: false}]
                 }"
             busy="{/isBusy}"
             noDataText="{i18n>noTodosText}"
