@@ -21,8 +21,8 @@
             busy="{/isBusy}"
             noDataText="{i18n>noTodosText}"
             class="sapUiTinyMarginTopBottom">
-                <CustomListItem
-                class="sapUiTinyMarginBeginEnd">
+                <CustomListItem class="sapUiTinyMarginBeginEnd"
+                                busy="{isBusy}">
                     <HBox alignItems="Center" justifyContent="SpaceBetween">
                         <HBox alignItems="Center" justifyContent="Start">
                             <CheckBox selected="{isCompleted}" select="handleToggle"/>

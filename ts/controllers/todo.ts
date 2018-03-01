@@ -17,19 +17,23 @@ let todos: Todo[] = [
     }
 ];
 
+const delay = time => new Promise(resolve => setTimeout(resolve, time));
+
 const router = Router();
 
-router.put('/clear-completed-todos', (req, res) => {
+router.put('/clear-completed-todos',async (req, res) => {
+    await delay(2500);
     todos = todos.map(todo => todo.isCompleted !== true ? todo : { ...todo, isDeleted: true });
     res.json(todos);
 });
 
 router.get('/', async (req, res) => {
-    await (new Promise(resolve => setTimeout(resolve, 3000)));
+    await delay(2500);
     res.json(todos);
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+    await delay(2500);
     if (req.body && req.body.text) {
         const todo: Todo = {
             id: faker.random.uuid(),
@@ -44,7 +48,8 @@ router.post('/', (req, res) => {
     };
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
+    await delay(2500);
     if (req.params.id) {
         todos = todos.map(todo => todo.id !== req.params.id ? todo : { ...todo, ...req.body, id: req.params.id });
         res.json(req.body);
@@ -53,7 +58,8 @@ router.put('/:id', (req, res) => {
     };
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
+    await delay(2500);
     if (req.params.id) {
         todos = todos.map(todo => todo.id !== req.params.id ? todo : { ...todo, isDeleted: true });
         res.json(req.params.id);

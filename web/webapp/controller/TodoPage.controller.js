@@ -2,13 +2,12 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"app/redux/store",
 	"app/redux/action",
-	"app/model/formatter"
-], function (Controller, oStore, action, formatter) {
+], function (Controller, oStore, action) {
 	"use strict";
 
 	return Controller.extend("app.controller.TodoPage", {
 
-		formatter: formatter,
+		// property
 
 		onInit: function () {
 		},
