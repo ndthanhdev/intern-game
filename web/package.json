@@ -10,6 +10,6 @@
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
-    "debug": "set-env.bat && node node_modules/@sap/approuter/approuter.js"
+    "debug": "call ./env.bat && node node_modules/@sap/approuter/approuter.js"
   }
 }

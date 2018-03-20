@@ -1,14 +1,12 @@
 @echo off
 
-SET VCAP_APPLICATION={"start":"2018-02-27 15:19:45 +0700","application_id":"854eb82f-141b-43b3-8a82-dfceb7437c9e","instance_id":"854eb82f-141b-43b3-8a82-dfceb7437c9e","space_id":"e21af2f9-1a09-4c7d-9699-0831c515fac4","application_name":"shell-web","organization_name":"dev","space_name":"DEV","started_at_timestamp":"1519719585637","started_at":"2018-02-27 15:19:45 +0700","state_timestamp":"1519719440692","full_application_uris":["https://sgnl50846993a.dhcp.sgn.sap.corp:51061"],"application_uris":["sgnl50846993a.dhcp.sgn.sap.corp:51061"],"uris":["sgnl50846993a.dhcp.sgn.sap.corp:51061"],"version":"57a23773-709f-498c-9e54-470f5757ff74","application_version":"57a23773-709f-498c-9e54-470f5757ff74"}
+SET VCAP_APPLICATION={"start":"2018-03-03 20:30:57 +0700","application_id":"793e1b05-716d-44b3-9afb-37a8332cb3ba","instance_id":"793e1b05-716d-44b3-9afb-37a8332cb3ba","space_id":"8ebccc8b-beaf-40df-acdb-774bddd5f77c","application_name":"web","organization_name":"dev","space_name":"DEV","started_at_timestamp":"1520083857082","started_at":"2018-03-03 20:30:57 +0700","state_timestamp":"1520083437063","full_application_uris":["http://sgnl50846993a.dhcp.sgn.sap.corp:51032"],"application_uris":["sgnl50846993a.dhcp.sgn.sap.corp:51032"],"uris":["sgnl50846993a.dhcp.sgn.sap.corp:51032"],"version":"55d77256-52b9-49d6-a8da-9a6ee2b5ebca","application_version":"55d77256-52b9-49d6-a8da-9a6ee2b5ebca"}
 SET VCAP_SERVICES={}
 SET destinations=[ ^
     { ^
         "name":"backend",  ^
-        "url":"http://localhost:3000",  ^
-        "forwardAuthToken": true,  ^
-        "strictSSL": false  ^
+        "url":"http://sgnl50846993a.dhcp.sgn.sap.corp:51033",  ^
+        "forwardAuthToken": true  ^
     } ^
 ]
 SET MEMORY_LIMIT=1024m
-

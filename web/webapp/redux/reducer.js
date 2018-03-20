@@ -2,7 +2,12 @@
 sap.ui.define([
   'app/redux/actionType'
 ], function (actionType) {
-  return (state, action) => {
+  const initState = {
+    isBusy: false,
+    todos: []
+  };
+
+  return (state = initState, action) => {
     var todos;
     switch (action.type) {
       case actionType.LOAD_TODOS:

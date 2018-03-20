@@ -1,19 +1,16 @@
 ---
 applications:
--   name: shell-web
+-   name: web
     path: web
     env:
         destinations: > 
             [
                 {
                     "name":"backend", 
-                    "url":"https://sgnl50846993a.dhcp.sgn.sap.corp:51073", 
+                    "url":"http://sgnl50846993a.dhcp.sgn.sap.corp:51033", 
                     "forwardAuthToken": true 
                 }
             ]
 
--   name: shell-ts
+-   name: ts
     path: ts
-
--   name: shell-db
-    path: db
