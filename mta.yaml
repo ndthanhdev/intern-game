@@ -1,0 +1,25 @@
+ID:  com.sap.thanh.intern-game
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: js
+   type: nodejs
+   path: js
+   provides:
+    - name: backend
+      properties:
+        url: ${default-url}
+
+ - name: web
+   type: nodejs
+   path: web
+   requires:
+    - name: backend
+      group: destinations
+      properties:
+        name: backend
+        url: ~{url}
+        forwardAuthToken: true        
+
+

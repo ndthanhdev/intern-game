@@ -2,15 +2,6 @@
 applications:
 -   name: web
     path: web
-    env:
-        destinations: > 
-            [
-                {
-                    "name":"backend", 
-                    "url":"http://sgnl50846993a.dhcp.sgn.sap.corp:51033", 
-                    "forwardAuthToken": true 
-                }
-            ]
-
--   name: ts
-    path: ts
+    
+-   name: js
+    path: js
