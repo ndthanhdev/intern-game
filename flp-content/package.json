@@ -1,0 +1,16 @@
+{
+  "name": "flp-content",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony node_modules/@sap/site-content-deployer/deploy.js",
+    "debug": "env.bat && node --harmony node_modules/@sap/site-content-deployer/deploy.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/site-content-deployer": "^1.19.0"
+  }
+}

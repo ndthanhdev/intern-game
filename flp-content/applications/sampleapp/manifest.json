@@ -1,0 +1,36 @@
+{
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "app.sample",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{title}}",
+		"tags": {
+			"keywords": [
+
+			]
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"sampleShow": {
+					"semanticObject": "sample",
+					"action": "show",
+					"deviceTypes": {
+						"desktop": true,
+						"tablet": true,
+						"phone": true
+					}
+				}
+			},
+			"outbounds": {
+
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5"
+	},
+	"sap.platform.cf": {
+		"uri": "/app/sample/"
+	}
+}

@@ -3,23 +3,74 @@ _schema-version: '2.0'
 version: 0.0.1
 
 modules:
- - name: js
+ - name: todo-js
    type: nodejs
-   path: js
+   path: todo/js
    provides:
     - name: backend
       properties:
         url: ${default-url}
 
- - name: web
+ - name: todo-web
    type: nodejs
-   path: web
+   path: todo/web
+   provides:
+    - name: todo
+      properties:
+        url: ${default-url}
    requires:
     - name: backend
       group: destinations
       properties:
         name: backend
         url: ~{url}
-        forwardAuthToken: true        
+        forwardAuthToken: true
+
+ - name: flp-host
+   type: nodejs
+   path: flp-host
+   requires:
+    - name: portal-services-host
+    - name: portal-uaa
+    - name: sapui5-provider
+      properties:
+         sapui5url: ~{url}
+    - name: todo
+      group: destinations
+      properties:
+        name: todo
+        url: ~{url}
+        forwardAuthToken: true
+
+ - name: flp-content
+   type: nodejs
+   path: flp-content
+   requires:
+     - name: portal-services-content
+     - name: portal-uaa
 
 
+resources:
+ - name: sapui5-provider
+   parameters:
+     provider-id: com.sap.ui5.dist.sapui5-dist-xsa.XSAC_UI5_FESV4:sapui5_fesv4
+     version: '>=1.42.0'
+     provider-nid: mta
+   type: configuration
+
+ - name: portal-services-content
+   parameters:
+      config:
+         siteId: com.sap.thanh.intern-game
+   type: com.sap.portal.site-content
+
+ - name: portal-services-host
+   parameters:
+      config:
+         siteId: com.sap.thanh.intern-game
+   type: com.sap.portal.site-host
+   
+ - name: portal-uaa
+   parameters:
+      service-plan: space
+   type: com.sap.xs.uaa

@@ -1,0 +1,15 @@
+{
+    "authenticationMethod": "none",
+    "routes": [
+        {
+            "source": "^/app/sample/(.*)$",
+            "target": "$1",
+            "localDir": "sample/"
+        },
+        {
+            "source": "^/app/todo/(.*)$",
+            "target": "$1",
+            "destination": "todo"
+        }
+    ]
+}

@@ -1,7 +1,14 @@
 ---
 applications:
--   name: web
-    path: web
+
+-   name: todo-web
+    path: todo/web
     
--   name: js
-    path: js
+-   name: todo-js
+    path: todo/js
+
+-   name: flp-content
+    path: flp-content
+
+-   name: flp-host
+    path: flp-host
