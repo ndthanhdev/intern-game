@@ -1,14 +1,14 @@
 ---
 applications:
 
--   name: todo-web
+-   name: ig-todo-web
     path: todo/web
     
--   name: todo-js
+-   name: ig-todo-js
     path: todo/js
 
--   name: flp-content
-    path: flp-content
+-   name: ig-flp-content
+    path: flp/flp-content
 
--   name: flp-host
-    path: flp-host
+-   name: ig-flp-host
+    path: flp/flp-host

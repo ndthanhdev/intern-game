@@ -28,7 +28,7 @@ modules:
 
  - name: ig-flp
    type: nodejs
-   path: flp/flp
+   path: flp
    requires:
     - name: sap-portal-services-host-intern-game
     - name: portal-uaa-intern-game
@@ -44,7 +44,7 @@ modules:
 
  - name: ig-flp-content
    type: sitecontent
-   path: flp/flp-content
+   path: flp-content
    requires:
      - name: sap-portal-services-client-intern-game
      - name: portal-uaa-intern-game
