@@ -14,9 +14,7 @@
 			"groupsOrder": [
 				"5acadc20-687e-11e6-8b77-86f30ca893d3"
 			],
-			"config": {
-
-			},
+			"config": {},
 			"sap.cloud.portal": {
 				"_version": "1.2.0",
 				"config": {
@@ -38,13 +36,20 @@
 				"i18n": "i18n/i18n.properties"
 			},
 			"payload": {
-				"appDescriptors": [{
-					"namespace": "",
-					"id": "6ef9cdd2-687e-11e6-8b77-86f30ca893d3"
-				}, {
-					"namespace": "",
-					"id": "73c3f80a-5245-4e6c-a51d-d9436b1cb530"
-				}]
+				"appDescriptors": [
+					{
+						"namespace": "",
+						"id": "6ef9cdd2-687e-11e6-8b77-86f30ca893d3"
+					},
+					{
+						"namespace": "",
+						"id": "73c3f80a-5245-4e6c-a51d-d9436b1cb530"
+					},
+					{
+						"namespace": "",
+						"id": "app.todo"
+					}
+				]
 			}
 		}
 	},
@@ -57,18 +62,16 @@
 				"entityType": "role"
 			},
 			"payload": {
-				"catalogs": [
-
-				],
-				"groups": [{
-					"id": "5acadc20-687e-11e6-8b77-86f30ca893d3"
-				}]
+				"catalogs": [],
+				"groups": [
+					{
+						"id": "5acadc20-687e-11e6-8b77-86f30ca893d3"
+					}
+				]
 			}
 		}
 	},
-	"applications": {
-
-	},
+	"applications": {},
 	"groups": {
 		"5acadc20-687e-11e6-8b77-86f30ca893d3": {
 			"identification": {
@@ -78,31 +81,41 @@
 				"title": "{{group_title}}"
 			},
 			"payload": {
-				"tiles": [{
-					"id": "mySapTile",
-					"title": "{{sap_app_title}}",
-					"subTitle": "{{sap_app_sub_title}}",
-					"icon": "sap-icon://world",
-					"target": {
-						"semanticObject": "Sap",
-						"action": "show",
-						"parameters": [
-
-						]
+				"tiles": [
+					{
+						"id": "mySapTile",
+						"title": "{{sap_app_title}}",
+						"subTitle": "{{sap_app_sub_title}}",
+						"icon": "sap-icon://world",
+						"target": {
+							"semanticObject": "Sap",
+							"action": "show",
+							"parameters": []
+						}
+					},
+					{
+						"id": "myUi5Tile",
+						"title": "{{sample_pers_app_title}}",
+						"subTitle": "{{sample_pers_app_sub_title}}",
+						"icon": "sap-icon://person-placeholder",
+						"target": {
+							"semanticObject": "app",
+							"action": "show",
+							"parameters": []
+						}
+					},
+					{
+						"id": "tile.todo",
+						"title": "Todo",
+						"subTitle": "",
+						"icon": "sap-icon://person-placeholder",
+						"target": {
+							"semanticObject": "todo",
+							"action": "show",
+							"parameters": []
+						}
 					}
-				}, {
-					"id": "myUi5Tile",
-					"title": "{{sample_pers_app_title}}",
-					"subTitle": "{{sample_pers_app_sub_title}}",
-					"icon": "sap-icon://person-placeholder",
-					"target": {
-						"semanticObject": "app",
-						"action": "show",
-						"parameters": [
-
-						]
-					}
-				}]
+				]
 			}
 		}
 	},

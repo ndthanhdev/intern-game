@@ -4,7 +4,7 @@ version: 0.0.1
 
 modules:
  - name: ig-todo-js
-   type: nodejs
+   type: javascript.nodejs
    path: todo/js
    provides:
     - name: backend
@@ -12,7 +12,7 @@ modules:
         url: ${default-url}
 
  - name: ig-todo-web
-   type: nodejs
+   type: javascript.nodejs
    path: todo/web
    provides:
     - name: todo
@@ -27,7 +27,7 @@ modules:
         forwardAuthToken: true
 
  - name: ig-flp
-   type: nodejs
+   type: javascript.nodejs
    path: flp
    requires:
     - name: sap-portal-services-host-intern-game
@@ -43,7 +43,7 @@ modules:
         forwardAuthToken: true
 
  - name: ig-flp-content
-   type: sitecontent
+   type: com.sap.portal.site-content
    path: flp-content
    requires:
      - name: sap-portal-services-client-intern-game
