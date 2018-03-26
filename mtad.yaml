@@ -1,0 +1,76 @@
+ID:  com.sap.thanh.intern-game
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: ig-todo-js
+   type: javascript.nodejs
+   path: todo-js/
+   provides:
+    - name: backend
+      properties:
+        url: ${default-url}
+
+ - name: ig-todo-web
+   type: javascript.nodejs
+   path: todo-web/
+   provides:
+    - name: todo
+      properties:
+        url: ${default-url}
+   requires:
+    - name: backend
+      group: destinations
+      properties:
+        name: backend
+        url: ~{url}
+        forwardAuthToken: true
+
+ - name: ig-flp
+   type: javascript.nodejs
+   path: flp/
+   requires:
+    - name: sap-portal-services-host-intern-game
+    - name: portal-uaa-intern-game
+    - name: sapui5-provider
+      properties:
+         sapui5url: ~{url}
+    - name: todo
+      group: destinations
+      properties:
+        name: todo
+        url: ~{url}
+        forwardAuthToken: true
+
+ - name: ig-flp-content
+   type: com.sap.portal.site-content
+   path: flp-content/
+   requires:
+     - name: sap-portal-services-client-intern-game
+     - name: portal-uaa-intern-game
+
+
+resources:
+ - name: sapui5-provider
+   parameters:
+     provider-id: com.sap.ui5.dist.sapui5-dist-xsa.XSAC_UI5_FESV4:sapui5_fesv4
+     version: '>=1.42.0'
+     provider-nid: mta
+   type: configuration
+
+ - name: sap-portal-services-client-intern-game
+   parameters:
+      config:
+         siteId: com.sap.thanh.intern-game
+   type: com.sap.portal.site-content
+
+ - name: sap-portal-services-host-intern-game
+   parameters:
+      config:
+         siteId: com.sap.thanh.intern-game
+   type: com.sap.portal.site-host
+   
+ - name: portal-uaa-intern-game
+   parameters:
+      service-plan: space
+   type: com.sap.xs.uaa

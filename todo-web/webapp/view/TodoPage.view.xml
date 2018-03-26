@@ -1,0 +1,47 @@
+<mvc:View controllerName="app.controller.TodoPage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+          xmlns="sap.m">
+    <Page title="{i18n>todoTitle}">
+        <headerContent>
+            <Button icon="sap-icon://back-to-top"/>
+        </headerContent>
+        <Label text="Add Todo" class="sapUiTinyMarginTopBottom sapUiTinyMarginBeginEnd" />
+        <FeedInput
+        post="handlePost"
+        showIcon="true"
+        icon="sap-icon://task"
+        placeholder="Add todo here..."/>
+        <content>
+            <List
+            headerText="{i18n>todoYourTodo}"
+            items="{ 
+                    path: '/todos',
+                    mode: 'OneWay',
+                    filters:[{path:'isDeleted', operator:'EQ', value1: false}]
+                }"
+            busy="{/isBusy}"
+            noDataText="{i18n>noTodosText}"
+            class="sapUiTinyMarginTopBottom">
+                <CustomListItem class="sapUiTinyMarginBeginEnd"
+                                busy="{isBusy}">
+                    <HBox alignItems="Center" justifyContent="SpaceBetween">
+                        <HBox alignItems="Center" justifyContent="Start">
+                            <CheckBox selected="{isCompleted}" select="handleToggle"/>
+                            <Label text="{text}" textAlign="Center"/>
+                        </HBox>
+                        <HBox alignItems="Center" justifyContent="End" class="sapUiTinyMarginBeginEnd">
+                            <Button icon="sap-icon://delete" press="handleDelete" />
+                        </HBox>
+
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </content>
+        <footer>
+            <Toolbar class="sapUiResponsiveContentPadding">
+                <Button text="Clear completed todo" press="handleClearComletedTodo" type="Reject" icon="sap-icon://sys-cancel-2" />
+                <ToolbarSpacer/>
+                <Button text="Reload" press="handleReload" type="Emphasized" icon="sap-icon://refresh"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

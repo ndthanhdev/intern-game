@@ -1,0 +1,29 @@
+{
+  "welcomeFile": "/app/index.html",
+  "authenticationMethod": "none",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/app/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    },
+    {
+      "source": "^/resources/(.*)$",
+      "target": "$1",
+      "localDir": "resources"
+    },
+    {
+      "source": "^/bower_components/(.*)$",
+      "target": "$1",
+      "localDir": "bower_components"
+    },
+    {
+      "source": "^/rest/(.*)$",
+      "target": "$1",
+      "destination": "backend"
+    }
+  ]
+}

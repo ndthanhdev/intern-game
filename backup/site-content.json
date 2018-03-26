@@ -1,0 +1,105 @@
+{
+    "_version": "1.0.0",
+    "site": {
+        "_version": "1.0",
+        "identification": {
+            "id": "2ee14e56-a1b8-4453-bfaf-9b1ec7084a4b",
+            "namespace": "",
+            "entityType": "site",
+            "description": "",
+            "i18n": "",
+            "title": "Thanh's Apps"
+        },
+        "payload": {
+            "groupsOrder": [
+                "group.group1"
+            ],
+            "config": {
+                "ushellConfig": {
+                    "renderers": {
+                        "fiori2": {
+                            "componentData": {
+                                "config": {
+                                    "enableRecentActivity": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "catalogs": {
+        "catalog.catalog1": {
+            "_version": "1.1",
+            "identification": {
+                "id": "catalog.catalog1",
+                "namespace": "",
+                "title": "Tool catalog",
+                "description": "All tools",
+                "entityType": "catalog",
+                "i18n": ""
+            },
+            "payload": {
+                "appDescriptors": [
+                    {
+                        "id": "app.todo"
+                    }
+                ]
+            }
+        }
+    },
+    "roles": {
+        "Everyone": {
+            "catalogs": [
+                {
+                    "id": "catalog.catalog1"
+                }
+            ],
+            "groups": [
+                {
+                    "id": "group.group1"
+                }
+            ]
+        }
+    },
+    "applications": {},
+    "groups": {
+        "group.group1": {
+            "identification": {
+                "id": "group.group1",
+                "i18n": "",
+                "namespace": "",
+                "title": "Default group"
+            },
+            "payload": {
+                "tiles": [
+                    {
+                        "id": "tile.todo",
+                        "target": {
+                            "semanticObject": "todo",
+                            "action": "show"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "siteThemes": {
+        "sap_hcb": {
+            "description": "SAP High Contrast Black",
+            "name": "sap_hcb",
+            "path": "sap_hcb"
+        },
+        "sap_belize_plus": {
+            "description": "SAP Belize Plus",
+            "name": "sap_belize_plus",
+            "path": "sap_belize_plus"
+        },
+        "sap_belize": {
+            "description": "SAP Belize",
+            "name": "sap_belize",
+            "path": "sap_belize"
+        }
+    }
+}

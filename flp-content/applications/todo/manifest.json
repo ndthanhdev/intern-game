@@ -2,8 +2,8 @@
     "sap.app": {
         "_version": "1.3.0",
         "id": "app.todo",
-        "i18n": "",
-        "title": "Todo App",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{title}}",
         "tags": {
             "keywords": []
         },

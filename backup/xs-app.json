@@ -1,0 +1,10 @@
+{
+    "authenticationMethod": "none",
+    "routes": [
+        {
+            "source": "^/app/todo/(.*)$",
+            "target": "$1",
+            "destination": "todo"
+        }
+    ]
+}
