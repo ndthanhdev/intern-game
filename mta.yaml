@@ -5,7 +5,7 @@ version: 0.0.1
 modules:
  - name: ig-todo-js
    type: nodejs
-   path: todo/js/
+   path: todo/js
    provides:
     - name: backend
       properties:
@@ -13,7 +13,7 @@ modules:
 
  - name: ig-todo-web
    type: nodejs
-   path: todo/web/
+   path: todo/web
    provides:
     - name: todo
       properties:
@@ -44,7 +44,7 @@ modules:
 
  - name: ig-flp-content
    type: sitecontent
-   path: flp/flp-content/
+   path: flp/flp-content
    requires:
      - name: sap-portal-services-client-intern-game
      - name: portal-uaa-intern-game
