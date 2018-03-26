@@ -4,16 +4,16 @@ version: 0.0.1
 
 modules:
  - name: ig-todo-js
-   type: javascript.nodejs
-   path: todo-js/
+   type: nodejs
+   path: todo/js/
    provides:
     - name: backend
       properties:
         url: ${default-url}
 
  - name: ig-todo-web
-   type: javascript.nodejs
-   path: todo-web/
+   type: nodejs
+   path: todo/web/
    provides:
     - name: todo
       properties:
@@ -27,8 +27,8 @@ modules:
         forwardAuthToken: true
 
  - name: ig-flp
-   type: javascript.nodejs
-   path: flp/
+   type: nodejs
+   path: flp/flp
    requires:
     - name: sap-portal-services-host-intern-game
     - name: portal-uaa-intern-game
@@ -43,8 +43,8 @@ modules:
         forwardAuthToken: true
 
  - name: ig-flp-content
-   type: com.sap.portal.site-content
-   path: flp-content/
+   type: sitecontent
+   path: flp/flp-content/
    requires:
      - name: sap-portal-services-client-intern-game
      - name: portal-uaa-intern-game
