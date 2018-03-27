@@ -7,19 +7,21 @@ const router = Router();
 
 let todos = [];
 
+router.use('/', async (req, res, next) => {
+    await delay(2500);
+    next();
+})
+
 router.put('/clear-completed-todos', async (req, res) => {
-    await delay(2000);
     todos = todos.map(todo => todo.isCompleted !== true ? todo : { ...todo, isDeleted: true });
     res.json(todos);
 });
 
 router.get('/', async (req, res) => {
-    await delay(2000);
     res.json(todos);
 });
 
 router.post('/', async (req, res) => {
-    await delay(2000);
     if (req.body && req.body.text) {
         const todo = {
             id: faker.random.uuid(),
@@ -35,7 +37,6 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-    await delay(2000);
     if (req.params.id) {
         todos = todos.map(todo => todo.id !== req.params.id ? todo : { ...todo, ...req.body, id: req.params.id });
         res.json(req.body);
@@ -45,7 +46,6 @@ router.put('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-    await delay(2000);
     if (req.params.id) {
         todos = todos.map(todo => todo.id !== req.params.id ? todo : { ...todo, isDeleted: true });
         res.json(req.params.id);
