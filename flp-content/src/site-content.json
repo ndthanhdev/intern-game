@@ -108,7 +108,7 @@
 						"id": "tile.todo",
 						"title": "Todo",
 						"subTitle": "",
-						"icon": "sap-icon://person-placeholder",
+						"icon": "sap-icon://activity-items",
 						"target": {
 							"semanticObject": "todo",
 							"action": "show",

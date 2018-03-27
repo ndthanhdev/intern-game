@@ -22,7 +22,7 @@
         }
     },
     "sap.platform.cf": {
-        "uri": "/app/todo/"
+        "uri": "/com/sap/thanh/app/todo/app/"
     },
     "sap.ui": {
         "_version": "1.3.0",

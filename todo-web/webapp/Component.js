@@ -1,3 +1,6 @@
+$.sap.registerModulePath("app", "/com/sap/thanh/app/todo/app");
+$.sap.registerModulePath("libs", "/com/sap/thanh/app/todo/bower_components");
+
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",

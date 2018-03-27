@@ -1,9 +1,10 @@
 {
   "routes": [
     {
-      "source": "^/todo/(.*)$",
+      "source": "^(/com/sap/thanh/app/todo/(.*))$",
       "target": "$1",
-      "destination": "todo"
+      "destination": "todo",
+      "csrfProtection": false
     }
   ]
 }

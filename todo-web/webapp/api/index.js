@@ -1,15 +1,16 @@
 sap.ui.define([], function () {
+    const baseRestUrl = "/com/sap/thanh/app/todo/rest";
     return {
         getTodo: async function () {
             return await $.ajax({
-                url: "/rest/todo",
+                url: `${baseRestUrl}/todo`,
                 contentType: "application/json",
                 dataType: "json",
             });
         },
         postTodo: async function (text) {
             return await $.ajax({
-                url: "/rest/todo",
+                url: `${baseRestUrl}/todo`,
                 method: "POST",
                 contentType: "application/json",
                 dataType: "json",
@@ -18,7 +19,7 @@ sap.ui.define([], function () {
         },
         putTodo: async function (id, todo) {
             return await $.ajax({
-                url: `/rest/todo/${id}`,
+                url: `${baseRestUrl}/todo/${id}`,
                 method: "PUT",
                 contentType: "application/json",
                 data: JSON.stringify(todo)
@@ -26,14 +27,14 @@ sap.ui.define([], function () {
         },
         deleteTodo: async function (id) {
             return await $.ajax({
-                url: `/rest/todo/${id}`,
+                url: `${baseRestUrl}/todo/${id}`,
                 dataType: "json",
                 method: "DELETE"
             });
         },
         clearComletedTodos: async function (id, todo) {
             return await $.ajax({
-                url: `/rest/todo/clear-completed-todos`,
+                url: `${baseRestUrl}/todo/clear-completed-todos`,
                 method: "PUT",
                 contentType: "application/json",
                 dataType: "json"

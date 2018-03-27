@@ -5,20 +5,23 @@ version: 0.0.1
 modules:
  - name: ig-todo-js
    type: javascript.nodejs
-   path: todo/js
+   path: todo-js/
    provides:
     - name: backend
       properties:
         url: ${default-url}
+   requires:
+    - name: inter-game-uaa
 
  - name: ig-todo-web
    type: javascript.nodejs
-   path: todo/web
+   path: todo-web/
    provides:
     - name: todo
       properties:
         url: ${default-url}
    requires:
+    - name: inter-game-uaa
     - name: backend
       group: destinations
       properties:
@@ -28,10 +31,10 @@ modules:
 
  - name: ig-flp
    type: javascript.nodejs
-   path: flp
+   path: flp/
    requires:
     - name: sap-portal-services-host-intern-game
-    - name: portal-uaa-intern-game
+    - name: inter-game-uaa
     - name: sapui5-provider
       properties:
          sapui5url: ~{url}
@@ -44,10 +47,10 @@ modules:
 
  - name: ig-flp-content
    type: com.sap.portal.site-content
-   path: flp-content
+   path: flp-content/
    requires:
      - name: sap-portal-services-client-intern-game
-     - name: portal-uaa-intern-game
+     - name: inter-game-uaa
 
 
 resources:
@@ -70,7 +73,7 @@ resources:
          siteId: com.sap.thanh.intern-game
    type: com.sap.portal.site-host
    
- - name: portal-uaa-intern-game
+ - name: inter-game-uaa
    parameters:
       service-plan: space
    type: com.sap.xs.uaa

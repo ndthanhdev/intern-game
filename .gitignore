@@ -63,3 +63,4 @@ typings/
 # mta
 .mta/
 *.mtar
+mta-assembly/

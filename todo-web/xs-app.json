@@ -1,27 +1,27 @@
 {
-  "welcomeFile": "/app/index.html",
+  "welcomeFile": "/com/sap/thanh/app/todo/app/index.html",
   "authenticationMethod": "none",
   "logout": {
     "logoutEndpoint": "/do/logout"
   },
   "routes": [
     {
-      "source": "^/app/(.*)$",
+      "source": "^/com/sap/thanh/app/todo/app/(.*)$",
       "target": "$1",
       "localDir": "webapp"
     },
     {
-      "source": "^/resources/(.*)$",
+      "source": "^/com/sap/thanh/app/todo/resources/(.*)$",
       "target": "$1",
       "localDir": "resources"
     },
     {
-      "source": "^/bower_components/(.*)$",
+      "source": "^/com/sap/thanh/app/todo/bower_components/(.*)$",
       "target": "$1",
       "localDir": "bower_components"
     },
     {
-      "source": "^/rest/(.*)$",
+      "source": "^/com/sap/thanh/app/todo/rest/(.*)$",
       "target": "$1",
       "destination": "backend"
     }
