@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node --harmony ./bin/www"
+    "start": "node --harmony ./bin/www",
+    "debug": "call env.bat && node --harmony ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

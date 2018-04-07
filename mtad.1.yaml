@@ -28,7 +28,12 @@ modules:
         name: backend
         url: ~{url}
         forwardAuthToken: true
-        
+ - name: ig-tile-generator
+   type: javascript.nodejs
+   path: tile-generator
+   requires:
+    - name: sap-portal-services-host-intern-game
+
  - name: ig-flp
    type: javascript.nodejs
    path: flp/

@@ -1,20 +1,20 @@
-$.sap.registerModulePath("app", "/com/sap/thanh/app/todo/app");
-$.sap.registerModulePath("libs", "/com/sap/thanh/app/todo/bower_components");
+$.sap.registerModulePath('app', '/com/sap/thanh/app/todo/app');
+$.sap.registerModulePath('libs', '/com/sap/thanh/app/todo/bower_components');
 
 sap.ui.define([
-	"sap/ui/core/UIComponent",
-	"sap/ui/Device",
-	"app/model/models",
-	"libs/openui5-redux-model/dist/redux/ReduxModel",
-	"app/redux/store",
-	"app/redux/action"
+	'sap/ui/core/UIComponent',
+	'sap/ui/Device',
+	'app/model/models',
+	'libs/openui5-redux-model/dist/redux/ReduxModel',
+	'app/redux/store',
+	'app/redux/action'
 ], function (UIComponent, Device, models, ReduxModel, oStore, action) {
-	"use strict";
+	'use strict';
 
-	return UIComponent.extend("app.Component", {
+	return UIComponent.extend('app.Component', {
 
 		metadata: {
-			manifest: "json"
+			manifest: 'json'
 		},
 
 		/**
@@ -30,7 +30,7 @@ sap.ui.define([
 			this.getRouter().initialize();
 
 			// set the device model
-			this.setModel(models.createDeviceModel(), "device");
+			this.setModel(models.createDeviceModel(), 'device');
 
 			// set redux model
 			const model = new ReduxModel(oStore);

@@ -5,10 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to todo-web",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}/todo-web/webapp"
+        },
+        {
             "type": "node",
             "request": "attach",
-            "name": "Attach TS",
-            "port": 9229
+            "name": "Attach flp",
+            "port": 9229,
+            "cwd": "${workspaceFolder}/flp"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach todo-js",
+            "port": 9229,
+            "cwd": "${workspaceFolder}/todo-js"
         },
         {
             "type": "chrome",
