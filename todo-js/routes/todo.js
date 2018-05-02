@@ -1,5 +1,5 @@
-const { RequestHandler, Router } = require("express");
-const faker = require("faker");
+const { Router } = require('express');
+const faker = require('faker');
 
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
@@ -10,7 +10,7 @@ let todos = [];
 router.use('/', async (req, res, next) => {
     await delay(2500);
     next();
-})
+});
 
 router.put('/clear-completed-todos', async (req, res) => {
     todos = todos.map(todo => todo.isCompleted !== true ? todo : { ...todo, isDeleted: true });
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
         res.json(todo);
     } else {
         res.sendStatus(500);
-    };
+    }
 });
 
 router.put('/:id', async (req, res) => {
@@ -42,7 +42,7 @@ router.put('/:id', async (req, res) => {
         res.json(req.body);
     } else {
         res.sendStatus(500);
-    };
+    }
 });
 
 router.delete('/:id', async (req, res) => {
@@ -51,7 +51,7 @@ router.delete('/:id', async (req, res) => {
         res.json(req.params.id);
     } else {
         res.sendStatus(500);
-    };
+    }
 });
 
 module.exports = router;

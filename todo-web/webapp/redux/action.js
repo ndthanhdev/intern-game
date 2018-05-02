@@ -3,7 +3,7 @@ sap.ui.define([
     'app/redux/actionType'
 ], function (api, actionType) {
     // load todos
-    const LoadTodos = () => async (dispatch, getState) => {
+    const LoadTodos = () => async (dispatch) => {
         try {
             await dispatch({
                 type: actionType.LOAD_TODOS
@@ -23,7 +23,7 @@ sap.ui.define([
         };
     };
 
-    const LoadTodosFail = (error) => async (dispatch, getState) => {
+    const LoadTodosFail = (error) => async (dispatch) => {
         await dispatch({
             type: actionType.LOAD_TODOS_FAIL,
             payload: error
@@ -31,7 +31,7 @@ sap.ui.define([
     };
 
     // add todo
-    const AddTodo = (text) => async (dispatch, getState) => {
+    const AddTodo = (text) => async (dispatch) => {
         try {
             await dispatch({
                 type: actionType.ADD_TODO,
@@ -52,7 +52,7 @@ sap.ui.define([
         };
     };
 
-    const AddTodoFail = (error) => async (dispatch, getState) => {
+    const AddTodoFail = (error) => async (dispatch) => {
         await dispatch({
             type: actionType.ADD_TODO_FAIL,
             payload: error
@@ -60,7 +60,7 @@ sap.ui.define([
     };
 
     // delete todo
-    const DeleteTodo = (id) => async (dispatch, getState) => {
+    const DeleteTodo = (id) => async (dispatch) => {
         try {
             await dispatch({
                 type: actionType.DELETE_TODO,
@@ -81,7 +81,7 @@ sap.ui.define([
         };
     };
 
-    const DeleteTodoFail = (error) => async (dispatch, getState) => {
+    const DeleteTodoFail = (error) => async (dispatch) => {
         await dispatch({
             type: actionType.DELETE_TODO_FAIL,
             payload: error
@@ -89,7 +89,7 @@ sap.ui.define([
     };
 
     // toggle todo
-    const ToggleTodo = (todo) => async (dispatch, getState) => {
+    const ToggleTodo = (todo) => async (dispatch) => {
         try {
             await dispatch({
                 type: actionType.TOGGLE_TODO,
@@ -111,7 +111,7 @@ sap.ui.define([
         };
     };
 
-    const ToggleTodoFail = (error) => async (dispatch, getState) => {
+    const ToggleTodoFail = (error) => async (dispatch) => {
         await dispatch({
             type: actionType.TOGGLE_TODO_FAIL,
             payload: error
@@ -119,7 +119,7 @@ sap.ui.define([
     };
 
     // clear completed todos
-    const ClearComletedTodos = () => async (dispatch, getState) => {
+    const ClearComletedTodos = () => async (dispatch) => {
         try {
             await dispatch({
                 type: actionType.CLEAR_COMPLETED_TODOS
@@ -139,7 +139,7 @@ sap.ui.define([
         };
     };
 
-    const ClearComletedTodosFail = (error) => async (dispatch, getState) => {
+    const ClearComletedTodosFail = (error) => async (dispatch) => {
         await dispatch({
             type: actionType.CLEAR_COMPLETED_TODOS_FAIL,
             payload: error
