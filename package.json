@@ -1,0 +1,16 @@
+{
+  "name": "intern-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ndthanhdev/intern-game.git",
+  "author": "Duy Thanh Nguyen <ndthanhdev@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-requirejs": "^3.1.1"
+  }
+}
